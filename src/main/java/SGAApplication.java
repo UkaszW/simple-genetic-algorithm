@@ -5,10 +5,10 @@ import java.util.stream.Collectors;
 public class SGAApplication {
 
     public static void main(String... args) {
-        List<Double> results = GeneticAlgorithm.GeneticAlgorithm(20, 20, 0.1, 0.1, GeneticAlgorithm.function);
+        List<Double> results = GeneticAlgorithm.runBy(20, 20, 0.1, 0.1);
 
         List<Double> afterCalculations =
-                results.stream().map(value -> GeneticAlgorithm.function.apply(value)).collect(Collectors.toList());
+                results.stream().map(value -> GeneticAlgorithm.FIT_FUNCTION.apply(value)).collect(Collectors.toList());
 
         System.out.println("Initial values: ");
         results.forEach(System.out::println);
